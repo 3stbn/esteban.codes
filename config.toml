@@ -1,4 +1,4 @@
-baseURL = "https://laughing-austin-20981f.netlify.app/"
+baseURL = "/"
 languageCode = "en-us"
 title = "esteban.codes"
 theme = "hello-friend-ng"
