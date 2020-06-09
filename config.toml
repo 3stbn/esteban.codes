@@ -1,0 +1,34 @@
+baseURL = "https://esteban.codes/"
+languageCode = "en-us"
+title = "esteban.codes"
+theme = "hello-friend-ng"
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
+
+  homeSubtitle = "Web tutorials"
+
+  disableReadOtherPosts = false
+
+  
+  description = "Esteban codes - Coding tutorials"
+  keywords = "coding, blog"
+
+ 
+  defaultTheme = "dark"
+
+[author]
+    name = "Esteban"
+
+[taxonomies]
+    category = "blog"
+    tag      = "tags"
+    series   = "series"
+
+[[menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/posts"
