@@ -20,11 +20,11 @@ The app consist in an interface to create bucket list items , so you can keep tr
 
 We can remove the items that we don't longer want , and we can edit current values .
 
-As you can see we are using a live url in the internet, and every request is being send to our backend node server.
+Github repository:  <https://github.com/3stbn/bucket-list-mevn>
 
-We will start from scratch and I will explain every step involve in this process
 
----
+
+- - -
 
 Let's start by setting up MongoDB, we are going to be using mongo atlas which is a service to store mongo in the cloud. you could also set up mongo locally for the purpose of this tutorial. First sign up for an account, once you are done select the free plan that gives you a sandbox to play around with a mongo cluster. We are going to select the default settings here for the region and the type of cluster. You could change the name of it lets leave it by the default. 
 
@@ -40,12 +40,11 @@ The IP address that we are going to set up for this tutorial will give access to
 
 When you have added that, in the next step select this option that will give you the URI that we will be using to connect to the cluster, replace the password, and save this config for later when we set up our backend.
 
----
+- - -
 
 Now moving on with the project lets create the folder that we will be working on. Let's give it a name and then cd into the project
 
 ```bash
-
 mkdir bucket-list-mevn
 cd bucket-list-mevn
 npm init —yes
@@ -239,7 +238,6 @@ const BucketListItemSchema = new Schema({
         default: Date.now,
     },
 })
-
 ```
 
 It will be an object that has a description property which is a required string, and it will also have a option  to add a date that will be the type of the javascript Date object, and the default value will be the the current time of the server.
@@ -395,7 +393,6 @@ npm run dev
 Lets clear up our code, In the App.vue file i will first remove the initial code from the cli and then I will remove the initial component, now open the index.html file of the public folder and here we are going to add the cdn for bulma, wich is the css framework that we are going to use we will also  add the cdn for material icons
 
 ```js
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 ```
@@ -443,7 +440,6 @@ This should take care our fetching our data but now we need to display this data
     margin-top: 3rem;
     max-width: 700px;
 }
-
 ```
 
 now for every item we are going to use a div that has the notification css bulma class
@@ -513,11 +509,9 @@ Here  we will first await to the to the post request that we are making with axi
 Now we need a way to remove items from the database , for doing that lets change our item html markup so we can have two columns 
 
 ```html
-
 <div class="columns">	
 	
 </div>
-
 ```
 
 ```js
@@ -557,11 +551,9 @@ Lets test this out! you can see that this is removed from the dom , and if we re
 The only thing that our ui is missing now , is the ability to edit current items . For doing that we are going to be adding a edit icon at the left of the delete icon
 
 ```html
-
 <span class="icon has-text-primary">
   <i class="material-icons">edit</i>
 </span>
-
 ```
 
 To keep track of what we are updating I am going to create two new data properties
@@ -570,8 +562,7 @@ To keep track of what we are updating I am going to create two new data properti
 editedDescription: "",
 ```
 
-```
-
+````
 the editedDescription will be a string that gets updated when we edit the item, and the selected object will be the item that we click 
 
 Now lets add a select method that we will invoke when we click in the edit icon of an item.
@@ -581,7 +572,7 @@ select(item) {
   this.selected = item;
   this.editedDescription = item.description
 },
-```
+````
 
 This method will take the item as a parameter and it will  update the selected and editedDescription state with the item values
 
